@@ -7,10 +7,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet(name = "FirstServlet", urlPatterns = "/first_servlet")
-public class FirstServlet implements Servlet {
+@WebServlet(name = "MainServlet", urlPatterns = "/main")
+public class MainServlet implements Servlet {
 
-    private static Logger logger = LoggerFactory.getLogger(FirstServlet.class);
+    private static Logger logger = LoggerFactory.getLogger(MainServlet.class);
 
     private transient ServletConfig config;
 
@@ -26,14 +26,14 @@ public class FirstServlet implements Servlet {
 
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        logger.info("New request");
+        logger.info("New request to MainServlet");
 
-        servletResponse.getWriter().println("<h1>Servlet content</h1>");
+        servletResponse.getWriter().println("<h1>Main</h1>");
     }
 
     @Override
     public String getServletInfo() {
-        return "FirstServlet";
+        return "MainServlet";
     }
 
     @Override
