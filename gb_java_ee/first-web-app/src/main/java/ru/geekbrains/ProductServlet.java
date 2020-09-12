@@ -20,13 +20,7 @@ public class ProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("New GET request to OrderServlet");
 
-        resp.getWriter().printf("<h1>Product</h1>");
-    }
+        resp.getWriter().println("<h1>Product</h1>");
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("New POST request to ProductServlet");
-
-        resp.getWriter().printf("<h1>Product</h1>");
     }
 }

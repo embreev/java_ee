@@ -44,7 +44,7 @@
     </dependencies>
 
     <build>
-        <finalName>first-web-app</finalName>
+        <finalName>online-store</finalName>
 
         <plugins>
             <plugin>

@@ -20,13 +20,8 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("New GET request to MainServlet");
 
-        resp.getWriter().printf("<h1>Main</h1>");
-    }
+        resp.getWriter().println("<h1>Main</h1>");
+        resp.getWriter().println("<p>ПРИВЕТ</p>");
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("New POST request to MainServlet");
-
-        resp.getWriter().printf("<h1>Main</h1>");
     }
 }

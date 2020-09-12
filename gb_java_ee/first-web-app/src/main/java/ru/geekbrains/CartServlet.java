@@ -20,13 +20,7 @@ public class CartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("New GET request to CartServlet");
 
-        resp.getWriter().printf("<h1>Cart</h1>");
-    }
+        resp.getWriter().println("<h1>Cart</h1>");
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("New POST request to CartServlet");
-
-        resp.getWriter().printf("<h1>Cart</h1>");
     }
 }

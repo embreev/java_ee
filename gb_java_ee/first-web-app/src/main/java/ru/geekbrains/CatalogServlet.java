@@ -20,13 +20,7 @@ public class CatalogServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("New GET request to CatalogServlet");
 
-        resp.getWriter().printf("<h1>Main</h1>");
-    }
+        resp.getWriter().println("<h1>Catalog</h1>");
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("New POST request to CatalogServlet");
-
-        resp.getWriter().printf("<h1>Main</h1>");
     }
 }
