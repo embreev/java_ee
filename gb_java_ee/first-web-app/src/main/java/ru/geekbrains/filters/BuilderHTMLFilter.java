@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "/*")
 public class BuilderHTMLFilter implements Filter {
 
     private transient FilterConfig filterConfig;
@@ -16,14 +16,9 @@ public class BuilderHTMLFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        this.filterConfig.getServletContext().getRequestDispatcher("/header.html").include(servletRequest, servletResponse);
-        this.filterConfig.getServletContext().getRequestDispatcher("/menu.html").include(servletRequest, servletResponse);
+        this.filterConfig.getServletContext().getRequestDispatcher("/html/common/header.html").include(servletRequest, servletResponse);
+        this.filterConfig.getServletContext().getRequestDispatcher("/html/common/menu.html").include(servletRequest, servletResponse);
         filterChain.doFilter(servletRequest, servletResponse);
-        this.filterConfig.getServletContext().getRequestDispatcher("/footer.html").include(servletRequest, servletResponse);
-    }
-
-    @Override
-    public void destroy() {
-
+        this.filterConfig.getServletContext().getRequestDispatcher("/html/common/footer.html").include(servletRequest, servletResponse);
     }
 }
