@@ -15,10 +15,10 @@ public class BuilderHTMLFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        this.filterConfig.getServletContext().getRequestDispatcher("/html/common/header.html").include(servletRequest, servletResponse);
-        this.filterConfig.getServletContext().getRequestDispatcher("/html/common/menu.html").include(servletRequest, servletResponse);
-        filterChain.doFilter(servletRequest, servletResponse);
-        this.filterConfig.getServletContext().getRequestDispatcher("/html/common/footer.html").include(servletRequest, servletResponse);
+    public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
+        filterConfig.getServletContext().getRequestDispatcher("/html/common/header.html").include(req, resp);
+        filterConfig.getServletContext().getRequestDispatcher("/html/common/menu.html").include(req, resp);
+        chain.doFilter(req, resp);
+        filterConfig.getServletContext().getRequestDispatcher("/html/common/footer.html").include(req, resp);
     }
 }
